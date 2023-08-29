@@ -7,6 +7,5 @@ The best way to view it is to use the interactive web site rendered through GitH
 
 Alternativelly, you can browse the following folders:
 1. [trj](trj) - MD trajectories
-2. [analysis_scripts_examples](analysis_scripts_examples) - Software analysis scripts
 
 

@@ -319,6 +319,27 @@
         }
     }
 
+    var margin = {
+        top: 10,
+        right: 30,
+        bottom: 40,
+        left: 60
+      },
+      width = 800 - margin.left - margin.right,
+      height = 200 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    var svg = d3.select("#my_dataviz")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+    const tooltipLine = svg.append('line');
+    var x = d3.scaleLinear();
+    var y = d3.scaleLinear();
+
 })
 
 </script>

@@ -1,5 +1,5 @@
 ### Nucleosome with H2A.J with full tails (PDB ID 5AV9)
-[Back](https://intbio.github.io/Armeev_et_al_2021)
+[Back](https://intbio.github.io/2023_Kosarim_H2A.J)
 
 <html lang="en">
   <head>

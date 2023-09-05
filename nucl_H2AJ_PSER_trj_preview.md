@@ -388,7 +388,7 @@
       <button type="submit" class="btn" name="play_button" data-toggle="button" id='play' onclick='window.traj.player.play();'>Play</button>
       <button type="submit" class="btn" name="play_button" data-toggle="button" id='pause' onclick='window.traj.player.pause();'>Pause</button>
       <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
-      <p>Time: <span id="frame_counter"></span> μs</p>
+      <p>Time: <span id="frame_counter"></span> ns</p>
 
 
 

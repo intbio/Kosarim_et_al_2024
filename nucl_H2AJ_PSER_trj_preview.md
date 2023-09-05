@@ -51,7 +51,7 @@
   var pdb="trj/nucl_H2AJ_PSER_for_web.pdb"
   var xtc="trj/nucl_H2AJ_PSER_for_web.xtc"
   //var csvfile="dat/1kx5_sym_fixed_dist_unwrap.csv"
-  var trjstep = 0.1;
+  var trjstep = 10;
   $(document).ready(function() {
     window.stage = new NGL.Stage("viewport0", {
       backgroundColor: "#FFFFFF"
@@ -318,6 +318,27 @@
         window.stage.setParameters({cameraType: "perspective"})
         }
     }
+
+	var margin = {
+        top: 10,
+        right: 30,
+        bottom: 40,
+        left: 60
+      },
+      width = 800 - margin.left - margin.right,
+      height = 200 - margin.top - margin.bottom;
+
+    // append the svg object to the body of the page
+    var svg = d3.select("#my_dataviz")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+    const tooltipLine = svg.append('line');
+    var x = d3.scaleLinear();
+    var y = d3.scaleLinear();
 
 })
     

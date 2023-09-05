@@ -1,4 +1,4 @@
-### NCP<sup><i>tt</i></sup><sub>145</sub> - 145  bp  Widom  601  DNA  sequence,  truncated  histone tails (PDB ID 3LZ0)
+### Canonical nucleosome (PDB ID 5AV9)
 [Back](https://intbio.github.io/Armeev_et_al_2021)
 
 <html lang="en">
@@ -48,9 +48,9 @@
 <script src="https://unpkg.com/ngl@2.0.0-dev.35/dist/ngl.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script>
-  var pdb="trj/3lz0_ntm_for_web.pdb"
-  var xtc="trj/3lz0_ntm_for_web.xtc"
-  var csvfile="dat/3lz0_ntm_dist_unwrap.csv"
+  var pdb="trj/canon_nucl_for_web.pdb"
+  var xtc="trj/canon_nucl_for_web.xtc"
+  //var csvfile="dat/3lz0_ntm_dist_unwrap.csv"
   var trjstep = 0.1;
   $(document).ready(function() {
     window.stage = new NGL.Stage("viewport0", {
@@ -319,169 +319,7 @@
         }
     }
 
-    var margin = {
-        top: 10,
-        right: 30,
-        bottom: 40,
-        left: 60
-      },
-      width = 800 - margin.left - margin.right,
-      height = 200 - margin.top - margin.bottom;
-
-    // append the svg object to the body of the page
-    var svg = d3.select("#my_dataviz")
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform",
-        "translate(" + margin.left + "," + margin.top + ")");
-    const tooltipLine = svg.append('line');
-    var x = d3.scaleLinear();
-    var y = d3.scaleLinear();
-    //Read the data
-    d3.csv(csvfile,
-
-      // When reading the csv, I must format variables:
-
-      // Now I can use this dataset:
-      function(data) {
-        data.forEach(function(d) {
-          d.Frame = d.Frame / 100;
-        });
-        // Add X axis --> it is a date format
-
-        x.domain([0, d3.max(data, function(d) {
-            return +d.Frame;
-          })])
-          .range([0, width])
-
-        svg.append("g")
-          .attr("transform", "translate(0," + height + ")")
-          .attr("class", "axis")
-          .call(d3.axisBottom(x)
-            .tickFormat(function(d) {
-              return d / 10;
-            }))
-
-        // Add Y axis
-
-        y.domain([0, Math.max(d3.max(data, function(d) {
-            return +d.prox;
-          }),
-          d3.max(data, function(d) {
-            return +d.dist;
-          }))
-          ])
-          .range([height, 0]);
-        svg.append("g")
-          .call(d3.axisLeft(y));
-
-
-        // Add the line
-        svg.append("path")
-          .datum(data)
-          .attr("fill", "none")
-          .attr("stroke", "steelblue")
-          .attr("opacity", 0.4)
-          .attr("stroke-width", 2)
-          .attr("d", d3.line()
-            .x(function(d) {
-              return x(d.Frame)
-            })
-            .y(function(d) {
-              return y(d.prox)
-            })
-          )
-        svg.append("path")
-          .datum(data)
-          .attr("fill", "none")
-          .attr("stroke", "orange")
-          .attr("opacity", 0.4)
-          .attr("stroke-width", 2)
-          .attr("d", d3.line()
-            .x(function(d) {
-              return x(d.Frame)
-            })
-            .y(function(d) {
-              return y(d.dist)
-            })
-          )
-         svg.append("path")
-          .datum(data)
-          .attr("fill", "none")
-          .attr("stroke", "steelblue")
-          .attr("stroke-width", 3)
-          .attr("d", d3.line()
-            .x(function(d) {
-              return x(d.Frame)
-            })
-            .y(function(d) {
-              return y(d.prox_filtered)
-            })
-          )
-         svg.append("path")
-          .datum(data)
-          .attr("fill", "none")
-          .attr("stroke", "orange")
-          .attr("stroke-width", 3)
-          .attr("d", d3.line()
-            .x(function(d) {
-              return x(d.Frame)
-            })
-            .y(function(d) {
-              return y(d.dist_filtered)
-            })
-          )
-          svg.append("text")
-          .attr("class", "x label")
-          .attr("text-anchor", "end")
-          .attr("x", width-width/2)
-          .attr("y", height + 35)
-          .text("Time, μs");
-          
-          svg.append("text")
-          .attr("class", "y label")
-          .attr("text-anchor", "end")
-          .attr("y", -45)
-          .attr("dy", ".75em")
-          .attr("transform", "rotate(-90)")
-          .text("Unwrapped base pairs");
-          
-        tipBox = svg.append('rect')
-          .attr('width', width)
-          .attr('height', height)
-          .attr('opacity', 0)
-          .on('mousemove', drawTooltip)
-          .on('mouseout', removeTooltip);
-        const tooltip = d3.select('#tooltip');
-
-
-        function removeTooltip() {
-          if (tooltip) tooltip.style('display', 'none');
-        }
-
-        function drawTooltip() {
-          const frame = Math.floor((x.invert(d3.mouse(tipBox.node())[0])));
-          window.traj.player.pause();
-          window.traj.setFrame(frame);
-
-          tooltipLine.attr('stroke', 'black')
-            .attr('x1', x(frame))
-            .attr('x2', x(frame))
-            .attr('y1', 0)
-            .attr('y2', height);
-          tooltip.html('Proximal unwrap (smoothed): ' + Math.floor(data[frame*100].prox_filtered) + 'bp<br>Distal unwrap (smoothed): ' + Math.floor(data[frame*100].dist_filtered) + 'bp')
-            .style('display', 'block')
-            .style('left', d3.event.pageX + 20)
-            .style('top', d3.event.pageY - 20)
-          /*        .selectAll()
-                  .data(data[frame])
-                  .append('div')
-                  .html(d => 1 ); */
-        }
-      })
-  })
+  
 
 
 
@@ -533,10 +371,6 @@
       <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
       <p>Time: <span id="frame_counter"></span> μs</p>
 
-    </div>
-    <h4>Number of detached DNA base pairs from each nucleosome end</h4>
-    <div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div>
-    <div id="my_dataviz"></div>
 
 
   </body>

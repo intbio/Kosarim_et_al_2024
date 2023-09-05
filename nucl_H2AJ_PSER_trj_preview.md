@@ -1,4 +1,4 @@
-### Nucleosome with H2A.J with H2AK122ph (PDB ID 5AV9)
+### Nucleosome with H2A.J with H2AS122ph with full tails (PDB ID 5AV9)
 [Back](https://intbio.github.io/Armeev_et_al_2021)
 
 <html lang="en">

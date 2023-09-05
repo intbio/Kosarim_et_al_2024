@@ -51,7 +51,7 @@
   var pdb="trj/canon_nucl_for_web.pdb"
   var xtc="trj/canon_nucl_for_web.xtc"
   //var csvfile="dat/3lz0_ntm_dist_unwrap.csv"
-  var trjstep = 0.1;
+  var trjstep = 10;
   $(document).ready(function() {
     window.stage = new NGL.Stage("viewport0", {
       backgroundColor: "#FFFFFF"
@@ -321,9 +321,6 @@
 
   
 
-  <body>
-<html>
-
 </script>
     <br>
     <p style="color:#020AED;font-size:22px;font-family:verdana;font-weight: bold;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;display: inline">H3</p>
@@ -370,7 +367,7 @@
       <button type="submit" class="btn" name="play_button" data-toggle="button" id='play' onclick='window.traj.player.play();'>Play</button>
       <button type="submit" class="btn" name="play_button" data-toggle="button" id='pause' onclick='window.traj.player.pause();'>Pause</button>
       <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
-      <p>Time: <span id="frame_counter"></span> μs</p>
+      <p>Time: <span id="frame_counter"></span> ns</p>
 
 
   </body>

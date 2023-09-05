@@ -1,4 +1,4 @@
-### NCP<sup><i>tt</i></sup><sub>146</sub> - Nucleosome with H2A.J with tails (PDB ID 5AV9)
+### Nucleosome with H2A.J with tails (PDB ID 5AV9)
 [Back](https://intbio.github.io/Armeev_et_al_2021)
 
 <html lang="en">

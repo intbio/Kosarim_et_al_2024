@@ -51,7 +51,7 @@
   var pdb="trj/nucl_H2AJ_for_web.pdb"
   var xtc="trj/nucl_H2AJ_for_web.xtc"
   //var csvfile="dat/1aoi_ntm_dist_unwrap.csv"
-  var trjstep = 0.1;
+  var trjstep = 10;
   $(document).ready(function() {
     window.stage = new NGL.Stage("viewport0", {
       backgroundColor: "#FFFFFF"

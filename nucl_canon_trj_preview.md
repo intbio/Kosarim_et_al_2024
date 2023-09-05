@@ -337,6 +337,8 @@
       .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
     const tooltipLine = svg.append('line');
+    var x = d3.scaleLinear();
+    var y = d3.scaleLinear();
     
   });
   

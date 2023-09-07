@@ -390,17 +390,17 @@
     <label class="form-check-label " for="ortho_check">
       Show axes
     </label>
+    <!--
+    <br>
+    <input class="form-check-input " type="checkbox" name="arg_lys_check" value="" id="arg_lys_check">
+    <label class="form-check-label " for="arg_lys_check">
+      Show ARG LYS
+    </label> 
     
-    //<br>
-    //<input class="form-check-input " type="checkbox" name="arg_lys_check" value="" id="arg_lys_check">
-    //<label class="form-check-label " for="arg_lys_check">
-    //  Show ARG LYS
-    //</label>
-    
-    //<input class="form-check-input " type="checkbox" name="latch_check" value="" id="latch_check">
-    //<label class="form-check-label " for="latch_check">
-      //Show H3 39-49 DNA latch
-    //</label>
+    <input class="form-check-input " type="checkbox" name="latch_check" value="" id="latch_check">
+    <label class="form-check-label " for="latch_check">
+      Show H3 39-49 DNA latch
+    </label> -->
 
     <br>
     <input class="form-check-input " type="checkbox" name="replaced_AA_check" value="" id="replaced_AA_check">
@@ -408,10 +408,6 @@
       Show H2A.J replacements
     </label>
 
-    <input class="form-check-input " type="checkbox" name="PSER_check" value="" id="PSER_check">
-    <label class="form-check-label " for="PSER_check">
-      Show PSER
-    </label>
         
     <input class="form-check-input " type="checkbox" name="highlight_DA_check" value="" id="highlight_DA_check">
     <label class="form-check-label " for="highlight_DA_check">

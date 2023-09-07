@@ -107,7 +107,7 @@
       //H3 39-49 - назвать H3 39-49 DNA latch
 
       window.replaced_AA_selection = nucl.addRepresentation('hyperball', {
-        "sele": "(10,16,40,99,123,124,126,128) and (:C or :G) and not _H",
+        "sele": "(10, 16, 40, 99, 123, 124, 126, 128) and (:C or :G) and not _H",
         color: hyper_scheme,
         radius: 3.5
       });
@@ -375,6 +375,8 @@
     <p style="color:#E0F705;font-size:22px;font-family:verdana;font-weight: bold;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;display: inline">H2A</p>
     <p style="color:#CE0000;font-size:22px;font-family:verdana;font-weight: bold;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;display: inline">H2B</p>
     <p style="color:#808080;font-size:22px;font-family:verdana;font-weight: bold;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;display: inline">DNA</p>
+    <br>
+    <p style="color:steelblue">Distal</p> <p>and</p> <p style="color:orange">proximal</p> <p>entry/exit</p>
     <br>
     <input class="form-check-input " type="checkbox" name="ref_str_check" value="" id="ref_str_check">
     <label class="form-check-label " for="ref_str_check">

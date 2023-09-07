@@ -106,6 +106,20 @@
       
       //H3 39-49 - назвать H3 39-49 DNA latch
 
+      window.replaced_AA_selection = nucl.addRepresentation('hyperball', {
+        "sele": "(10,16,40,99,123,124,126,128) and (:C or :G) and not _H",
+        color: hyper_scheme,
+        radius: 3.5
+      });
+      window.replaced_AA_selection.setVisibility(false);
+
+      window.PSER_selection = nucl.addRepresentation('hyperball', {
+        "sele": "PSER and not _H",
+        color: hyper_scheme,
+        radius: 3.5
+      });
+      window.PSER_selection.setVisibility(false);
+
 
       nucl.addRepresentation('cartoon', {
         "sele": ":A :E",
@@ -234,6 +248,8 @@
     $('input[type=checkbox][name=highlight_DA_check]').on('change', toggle_DA_highlight);
     $('input[type=checkbox][name=ortho_check]').on('change', toggle_orthographic);
     $('input[type=checkbox][name=axes_check]').on('change', toggle_axes_visibility);
+    $('input[type=checkbox][name=replaced_AA_check]').on('change', toggle_replaced_AA_visibility);
+    $('input[type=checkbox][name=PSER_check]').on('change', toggle_PSER_visibility);
     
 
 
@@ -304,6 +320,16 @@
       var state = $(this).is(":checked");
       window.dna_latch_selection.setVisibility(state);
     }
+
+    function toggle_replaced_AA_visibility() {
+      var state = $(this).is(":checked");
+      window.replaced_AA_selection.setVisibility(state);
+    }
+
+    function toggle_PSER_visibility() {
+      var state = $(this).is(":checked");
+      window.PSER_selection.setVisibility(state);
+    }
     
     function toggle_axes_visibility() {
       var state = $(this).is(":checked");
@@ -365,18 +391,28 @@
       Show axes
     </label>
     
-    <br>
-    <input class="form-check-input " type="checkbox" name="arg_lys_check" value="" id="arg_lys_check">
-    <label class="form-check-label " for="arg_lys_check">
-      Show ARG LYS
-    </label>
+    //<br>
+    //<input class="form-check-input " type="checkbox" name="arg_lys_check" value="" id="arg_lys_check">
+    //<label class="form-check-label " for="arg_lys_check">
+    //  Show ARG LYS
+    //</label>
     
-    <input class="form-check-input " type="checkbox" name="latch_check" value="" id="latch_check">
-    <label class="form-check-label " for="latch_check">
-      Show H3 39-49 DNA latch
+    //<input class="form-check-input " type="checkbox" name="latch_check" value="" id="latch_check">
+    //<label class="form-check-label " for="latch_check">
+      //Show H3 39-49 DNA latch
+    //</label>
+
+    <br>
+    <input class="form-check-input " type="checkbox" name="replaced_AA_check" value="" id="replaced_AA_check">
+    <label class="form-check-label " for="replaced_AA_check">
+      Show H2A.J replacements
+    </label>
+
+    <input class="form-check-input " type="checkbox" name="PSER_check" value="" id="PSER_check">
+    <label class="form-check-label " for="PSER_check">
+      Show PSER
     </label>
         
-
     <input class="form-check-input " type="checkbox" name="highlight_DA_check" value="" id="highlight_DA_check">
     <label class="form-check-label " for="highlight_DA_check">
       Highlight ADE

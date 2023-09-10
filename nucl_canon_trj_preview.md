@@ -537,5 +537,10 @@
       <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
       <p>Time: <span id="frame_counter"></span> ns</p>
 
+    </div>
+    <h4>Number of detached DNA base pairs from each nucleosome end</h4>
+    <div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div>
+    <div id="my_dataviz"></div>
+
   </body>
 </html>

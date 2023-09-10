@@ -349,7 +349,7 @@
       // Now I can use this dataset:
       function(data) {
         data.forEach(function(d) {
-          d.Frame = d.Frame / 100;
+          d.Frame = d.Frame;
         });
         // Add X axis --> it is a date format
 
@@ -440,7 +440,7 @@
           .attr("text-anchor", "end")
           .attr("x", width-width/2)
           .attr("y", height + 35)
-          .text("Time, μs");
+          .text("Time, ns");
 
           svg.append("text")
           .attr("class", "y label")
@@ -538,7 +538,7 @@
       <p>Time: <span id="frame_counter"></span> ns</p>
 
     </div>
-    <h4>Number of detached DNA base pairs from each nucleosome end</h4>
+    <h4>Number of unwrapped DNA base pairs</h4>
     <div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div>
     <div id="my_dataviz"></div>
 

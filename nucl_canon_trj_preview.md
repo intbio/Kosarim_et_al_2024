@@ -389,7 +389,7 @@
           .attr("stroke-width", 2)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame*1000)
+              return x(d.Frame/100)
             })
             .y(function(d) {
               return y(d.prox)
@@ -403,7 +403,7 @@
           .attr("stroke-width", 2)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame*1000)
+              return x(d.Frame/100)
             })
             .y(function(d) {
               return y(d.dist)
@@ -416,7 +416,7 @@
           .attr("stroke-width", 3)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame*1000)
+              return x(d.Frame/100)
             })
             .y(function(d) {
               return y(d.prox_filtered)
@@ -429,7 +429,7 @@
           .attr("stroke-width", 3)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame*1000)
+              return x(d.Frame/100)
             })
             .y(function(d) {
               return y(d.dist_filtered)

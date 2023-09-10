@@ -50,7 +50,7 @@
 <script>
   var pdb="trj/nucl_H2AJ_PSER_for_web.pdb"
   var xtc="trj/nucl_H2AJ_PSER_for_web.xtc"
-  //var csvfile="dat/1kx5_sym_fixed_dist_unwrap.csv"
+  var csvfile="dat/H2AJ_PSER_dist_unwrap.csv"
   var trjstep = 10;
   $(document).ready(function() {
     window.stage = new NGL.Stage("viewport0", {
@@ -367,6 +367,150 @@
     var x = d3.scaleLinear();
     var y = d3.scaleLinear();
 
+         //Read the data
+    d3.csv(csvfile,
+
+      // When reading the csv, I must format variables:
+
+      // Now I can use this dataset:
+      function(data) {
+        data.forEach(function(d) {
+          d.Frame = d.Frame/10;
+        });
+        // Add X axis --> it is a date format
+
+        x.domain([0, d3.max(data, function(d) {
+            return +d.Frame;
+          })])
+          .range([0, width])
+
+        svg.append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .attr("class", "axis")
+          .call(d3.axisBottom(x)
+            .tickFormat(function(d) {
+              return d*10;
+            }))
+
+        // Add Y axis
+
+        y.domain([0, Math.max(d3.max(data, function(d) {
+            return +d.prox;
+          }),
+          d3.max(data, function(d) {
+            return +d.dist;
+          }))
+          ])
+          .range([height, 0]);
+        svg.append("g")
+          .call(d3.axisLeft(y));
+
+
+        // Add the line
+        svg.append("path")
+          .datum(data)
+          .attr("fill", "none")
+          .attr("stroke", "steelblue")
+          .attr("opacity", 0.4)
+          .attr("stroke-width", 2)
+          .attr("d", d3.line()
+            .x(function(d) {
+              return x(d.Frame)
+            })
+            .y(function(d) {
+              return y(d.prox)
+            })
+          )
+        svg.append("path")
+          .datum(data)
+          .attr("fill", "none")
+          .attr("stroke", "orange")
+          .attr("opacity", 0.4)
+          .attr("stroke-width", 2)
+          .attr("d", d3.line()
+            .x(function(d) {
+              return x(d.Frame)
+            })
+            .y(function(d) {
+              return y(d.dist)
+            })
+          )
+         svg.append("path")
+          .datum(data)
+          .attr("fill", "none")
+          .attr("stroke", "steelblue")
+          .attr("stroke-width", 3)
+          .attr("d", d3.line()
+            .x(function(d) {
+              return x(d.Frame)
+            })
+            .y(function(d) {
+              return y(d.prox_filtered)
+            })
+          )
+         svg.append("path")
+          .datum(data)
+          .attr("fill", "none")
+          .attr("stroke", "orange")
+          .attr("stroke-width", 3)
+          .attr("d", d3.line()
+            .x(function(d) {
+              return x(d.Frame)
+            })
+            .y(function(d) {
+              return y(d.dist_filtered)
+            })
+          )
+          svg.append("text")
+          .attr("class", "x label")
+          .attr("text-anchor", "end")
+          .attr("x", width-width/2)
+          .attr("y", height + 35)
+          .text("Time, ns");
+
+          svg.append("text")
+          .attr("class", "y label")
+          .attr("text-anchor", "end")
+          .attr("y", -45)
+          .attr("dy", ".75em")
+          .attr("transform", "rotate(-90)")
+          .text("Unwrapped base pairs");
+
+        tipBox = svg.append('rect')
+          .attr('width', width)
+          .attr('height', height)
+          .attr('opacity', 0)
+          .on('mousemove', drawTooltip)
+          .on('mouseout', removeTooltip);
+        const tooltip = d3.select('#tooltip');
+
+
+        function removeTooltip() {
+          if (tooltip) tooltip.style('display', 'none');
+        }
+
+        function drawTooltip() {
+          const frame = Math.floor((x.invert(d3.mouse(tipBox.node())[0])));
+          window.traj.player.pause();
+          window.traj.setFrame(frame);
+
+          tooltipLine.attr('stroke', 'black')
+            .attr('x1', x(frame))
+            .attr('x2', x(frame))
+            .attr('y1', 0)
+            .attr('y2', height);
+          tooltip.html('Proximal unwrap (smoothed): ' + Math.floor(data[frame].prox_filtered) + 'bp<br>Distal unwrap (smoothed): ' + Math.floor(data[frame].dist_filtered) + 'bp')
+            .style('display', 'block')
+            .style('left', d3.event.pageX + 20)
+            .style('top', d3.event.pageY - 20)
+          /*        .selectAll()
+                  .data(data[frame])
+                  .append('div')
+                  .html(d => 1 ); */
+        }
+
+     })
+
 })
     
 </script>
@@ -429,6 +573,10 @@
       <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
       <p>Time: <span id="frame_counter"></span> ns</p>
 
+    </div>
+    <h4>Number of detached DNA base pairs from each nucleosome end</h4>
+    <div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div>
+    <div id="my_dataviz"></div>
 
 
   </body>

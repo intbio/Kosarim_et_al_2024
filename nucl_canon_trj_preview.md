@@ -349,7 +349,7 @@
       // Now I can use this dataset:
       function(data) {
         data.forEach(function(d) {
-          d.Frame = d.Frame*10;
+          d.Frame = d.Frame;
         });
         // Add X axis --> it is a date format
 
@@ -363,7 +363,7 @@
           .attr("class", "axis")
           .call(d3.axisBottom(x)
             .tickFormat(function(d) {
-              return d / 10;
+              return d ;
             }))
 
         // Add Y axis
@@ -389,7 +389,7 @@
           .attr("stroke-width", 2)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame/100)
+              return x(d.Frame)
             })
             .y(function(d) {
               return y(d.prox)
@@ -403,7 +403,7 @@
           .attr("stroke-width", 2)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame/100)
+              return x(d.Frame)
             })
             .y(function(d) {
               return y(d.dist)
@@ -416,7 +416,7 @@
           .attr("stroke-width", 3)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame/100)
+              return x(d.Frame)
             })
             .y(function(d) {
               return y(d.prox_filtered)
@@ -429,7 +429,7 @@
           .attr("stroke-width", 3)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame/100)
+              return x(d.Frame)
             })
             .y(function(d) {
               return y(d.dist_filtered)

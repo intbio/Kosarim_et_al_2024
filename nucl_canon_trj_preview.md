@@ -389,7 +389,7 @@
           .attr("stroke-width", 2)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame)
+              return x(d.Frame*1000)
             })
             .y(function(d) {
               return y(d.prox)
@@ -403,7 +403,7 @@
           .attr("stroke-width", 2)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame)
+              return x(d.Frame*1000)
             })
             .y(function(d) {
               return y(d.dist)
@@ -416,7 +416,7 @@
           .attr("stroke-width", 3)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame)
+              return x(d.Frame*1000)
             })
             .y(function(d) {
               return y(d.prox_filtered)
@@ -429,7 +429,7 @@
           .attr("stroke-width", 3)
           .attr("d", d3.line()
             .x(function(d) {
-              return x(d.Frame)
+              return x(d.Frame*1000)
             })
             .y(function(d) {
               return y(d.dist_filtered)
@@ -466,7 +466,7 @@
         function drawTooltip() {
           const frame = Math.floor((x.invert(d3.mouse(tipBox.node())[0])));
           window.traj.player.pause();
-          window.traj.setFrame(frame*1000);
+          window.traj.setFrame(frame);
 
           tooltipLine.attr('stroke', 'black')
             .attr('x1', x(frame))

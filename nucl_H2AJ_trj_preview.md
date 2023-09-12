@@ -107,7 +107,7 @@
       //H3 39-49 - назвать H3 39-49 DNA latch
 
       window.replaced_AA_selection = nucl.addRepresentation('hyperball', {
-        "sele": "(10 or 16 or 40 or 99 or 123 or 124 or 126 or 128) and (:C or :G) and not _H",
+        "sele": "(10 or 16 or 40 or 99 or 123 or 125 or 127) and (:C or :G) and not _H",
         color: hyper_scheme,
         radius: 3.5
       });

@@ -108,7 +108,7 @@
       //H3 39-49 - назвать H3 39-49 DNA latch
 
       window.replaced_AA_selection = nucl.addRepresentation('hyperball', {
-        "sele": "(10 or 16 or 40 or 99 or 123 or 124 or 126 or 128) and (:C or :G) and not _H",
+        "sele": "(10 or 16 or 40 or 99 or 123 or 125 or 127) and (:C or :G) and not _H",
         color: hyper_scheme,
         radius: 3.5
       });
@@ -551,7 +551,7 @@
         <br>
     <input class="form-check-input " type="checkbox" name="replaced_AA_check" value="" id="replaced_AA_check">
     <label class="form-check-label " for="replaced_AA_check">
-      Show H2A.J replacements
+      Show H2A.J substitutions
     </label>
 
     <input class="form-check-input " type="checkbox" name="PSER_check" value="" id="PSER_check">

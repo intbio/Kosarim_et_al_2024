@@ -551,7 +551,7 @@
     <br>
     <input class="form-check-input " type="checkbox" name="replaced_AA_check" value="" id="replaced_AA_check">
     <label class="form-check-label " for="replaced_AA_check">
-      Show H2A.J replacements
+      Show H2A.J substitutions
     </label>
 
         

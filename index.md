@@ -24,5 +24,5 @@
 
 
 ### Force field for phosphoserine (PSER)
-[https://github.com/intbio/gromacs_ff/amber14sb_parmbsc1_cufix_PTM.ff](https://github.com/intbio/gromacs_ff/amber14sb_parmbsc1_cufix_PTM.ff)
+[https://github.com/intbio/gromacs_ff/amber14sb_parmbsc1_cufix_PTM.ff](https://github.com/intbio/gromacs_ff/tree/617afa2f50e9916c77f834eeb0d8832ecb30cc86/amber14sb_parmbsc1_cufix_PTM.ff)
 

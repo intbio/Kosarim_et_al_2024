@@ -526,7 +526,7 @@
     </label>
     
     
-    <br>
+    
     <input class="form-check-input " type="checkbox" name="arg_lys_check" value="" id="arg_lys_check">
     <label class="form-check-label " for="arg_lys_check">
       Show ARG LYS

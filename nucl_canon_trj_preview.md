@@ -1,4 +1,4 @@
-### N<sub>cH2A</sub><sup><i>run_1</i></sup>Canonical nucleosome with full tails (PDB ID 5AV9)
+### N<sub>cH2A</sub><sup>run_1</sup> - Canonical nucleosome with full tails (PDB ID 5AV9)
 [Back](https://intbio.github.io/2023_Kosarim_H2A.J)
 
 <html lang="en">
@@ -525,17 +525,17 @@
       Show axes
     </label>
     
-    <!--
+    
     <br>
     <input class="form-check-input " type="checkbox" name="arg_lys_check" value="" id="arg_lys_check">
     <label class="form-check-label " for="arg_lys_check">
       Show ARG LYS
-    </label> -->
-    
+    </label> 
+    <!--
     <input class="form-check-input " type="checkbox" name="latch_check" value="" id="latch_check">
     <label class="form-check-label " for="latch_check">
       Show H3 39-49 DNA latch
-    </label> 
+    </label> -->
 
     <br>
     <input class="form-check-input " type="checkbox" name="replaced_AA_check" value="" id="replaced_AA_check">

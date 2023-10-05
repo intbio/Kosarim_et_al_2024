@@ -1,6 +1,6 @@
 # Supplementary data
-## "Название статьи"
-[N.A. Kosarim, A.S. Kniazeva, A.S. Sharyafetdinova](ссылка на статью)
+## Molecular dynamics simulations of the nucleosome containing histone variant H2A.J
+[Nikita A.Kosarim, Anastasiia S.Fedulova, Aleksandra S.Shariafetdinova, Grigoriy A.Armeev and Alexey K.Shaytan](ссылка на статью)
 
 ### GitHub repository
 [https://github.com/intbio/2023_Kosarim_H2A.J](https://github.com/intbio/2023_Kosarim_H2A.J)

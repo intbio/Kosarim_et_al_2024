@@ -537,7 +537,7 @@
       Show axes
     </label>
     
-    <br>
+    
     <input class="form-check-input " type="checkbox" name="arg_lys_check" value="" id="arg_lys_check">
     <label class="form-check-label " for="arg_lys_check">
       Show ARG LYS
@@ -569,7 +569,7 @@
       <p>Time: <span id="frame_counter"></span> ns</p>
 
     </div>
-    <h4>Number of detached DNA base pairs from each nucleosome end</h4>
+    <h4>Number of detached DNA base pairs from the nucleosome core (excluding DNA linkers)</h4>
     <div id='tooltip' style='position:absolute;background-color:lightgray;padding:5px'></div>
     <div id="my_dataviz"></div>
 

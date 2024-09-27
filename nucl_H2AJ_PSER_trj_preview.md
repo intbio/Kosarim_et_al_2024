@@ -1,5 +1,5 @@
 ### N<sub>H2A.J,PSER</sub><sup>run_1</sup> -Nucleosome with H2A.J with H2AS122ph with full tails (PDB ID 5AV9)
-[Back](https://intbio.github.io/2023_Kosarim_H2A.J)
+[Back](https://intbio.github.io/Kosarim_et_al_2024)
 
 <html lang="en">
   <head>

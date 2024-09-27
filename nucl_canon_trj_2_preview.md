@@ -1,5 +1,5 @@
 ### N<sub>cH2A</sub><sup>run_2</sup> – Canonical nucleosome with full tails (PDB ID 5AV9)
-[Back](https://intbio.github.io/2023_Kosarim_H2A.J)
+[Back](https://intbio.github.io/Kosarim_et_al_2024)
 
 <html lang="en">
   <head>

@@ -3,7 +3,7 @@
 [Nikita A.Kosarim, Anastasiia S.Fedulova, Aleksandra S.Shariafetdinova, Grigoriy A.Armeev and Alexey K.Shaytan](ссылка на статью)
 
 ### GitHub repository
-[https://github.com/intbio/2023_Kosarim_H2A.J](https://github.com/intbio/2023_Kosarim_H2A.J)
+[https://github.com/intbio/Kosarim_et_al_2024](https://github.com/intbio/Kosarim_et_al_2024)
 
 ### Interactive preview of MD trajectories
 - [N<sub>cH2A</sub><sup>run_1</sup> - Canonical nucleosome with full tails (PDB ID 5AV9), run_1](nucl_canon_trj_preview)

@@ -22,6 +22,7 @@
 - N<sub>H2A.J</sub><sup>run_2</sup> - Nucleosome with H2A.J with full  tails (PDB ID 5AV9), run_2: [pdb](trj/nucl_H2AJ_for_web_2.pdb), [xtc](trj/nucl_H2AJ_for_web_2.xtc)
 - N<sub>H2A.J,PSER</sub><sup>run_1</sup> - Nucleosome with H2A.J with H2AS122ph with full  tails (PDB ID 5AV9), run_1: [pdb](trj/nucl_H2AJ_PSER_for_web.pdb), [xtc](trj/nucl_H2AJ_PSER_for_web.xtc)
 - N<sub>H2A.J,PSER</sub><sup>run_2</sup> - Nucleosome with H2A.J with H2AS122ph with full  tails (PDB ID 5AV9), run_2: [pdb](trj/nucl_H2AJ_PSER_for_web_2.pdb), [xtc](trj/nucl_H2AJ_PSER_for_web_2.xtc)
+- D<sub>cH2A</sub> - H2A-H2B dimer: [pdb](trj/h2a_h2b_tm_for_web_2.pdb), [xtc](h2a_h2b_tm_for_web_2.xtc)
 
 
 ### Force field for phosphoserine (PSER)

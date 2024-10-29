@@ -12,6 +12,7 @@
 - [N<sub>H2A.J</sub><sup>run_2</sup> - Nucleosome with H2A.J with full  tails (PDB ID 5AV9), run_2](nucl_H2AJ_trj_2_preview)
 - [N<sub>H2A.J,PSER</sub><sup>run_1</sup> - Nucleosome with H2A.J with H2AS122ph with full  tails (PDB ID 5AV9), run_1](nucl_H2AJ_PSER_trj_preview)
 - [N<sub>H2A.J,PSER</sub><sup>run_2</sup> - Nucleosome with H2A.J with H2AS122ph with full  tails (PDB ID 5AV9), run_2](nucl_H2AJ_PSER_trj_2_preview)
+- [D<sub>cH2A</sub> - H2A-H2B dimer](h2a_h2b_tm)
 
 
 ### Trajectory files
